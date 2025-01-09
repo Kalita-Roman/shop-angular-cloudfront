@@ -65,6 +65,11 @@ Resources:
           - AllowedHeaders: !Ref S3CorsAllowedHeaders
             AllowedMethods: !Ref S3CorsAllowedMethods
             AllowedOrigins: !Ref S3CorsAllowedOrigins
+      PublicAccessBlockConfiguration:
+        BlockPublicAcls: false
+        BlockPublicPolicy: false
+        IgnorePublicAcls: false
+        RestrictPublicBuckets: false
 
   AppBucketPolicy:
     Type: AWS::S3::BucketPolicy
