@@ -83,13 +83,7 @@ Resources:
               - !Join [ '', [ 'arn:aws:s3:::', !Ref 'AppBucket', /* ] ]
               - !Join [ '', [ 'arn:aws:s3:::', !Ref 'AppBucket' ] ]
             Principal:
-              AWS:
-                Fn::Join:
-                  - ' '
-                  -
-                    - 'arn:aws:iam::cloudfront:user/CloudFront Origin Access Identity'
-                    -
-                      !Ref OriginAccessIdentity
+              AWS: *
 
   OriginAccessIdentity:
     Type: AWS::CloudFront::CloudFrontOriginAccessIdentity
